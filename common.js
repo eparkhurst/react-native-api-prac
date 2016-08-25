@@ -23,9 +23,14 @@ module.exports = class deco extends Component {
 
   render() {
     if (this.state.tip){
+      let pic = {
+        uri: this.state.tip_image
+      };
       return (
         <View style={styles.container}>
+          <Image source={pic} resizeMode="cover" style={{flex: 1}}>
           <Text>Tip of the day : {this.state.tip} </Text>
+          </Image>
         </View>
       )
     } else {
